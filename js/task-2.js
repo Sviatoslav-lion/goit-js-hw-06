@@ -16,21 +16,23 @@
 class Storage {
     // тіло класу
     constructor(initialItems) {
-		this.items = initialItems; // приватна властивість
+		this.#items = initialItems; 
     }
+    
+    #items; // приватна властивість
 
     getItems() {
-        return this.items; // повертає весь перелік товарів
+        return this.#items; // повертає весь перелік товарів
     }
 
     addItem(newItem) {
-        this.items.push(newItem); // додаєм товар
+        this.#items.push(newItem); // додаєм товар
     }
 
     removeItem(itemToRemove) {
-        const index = this.items.indexOf(itemToRemove); // Знаходимо індекс товару для видалення
+        const index = this.#items.indexOf(itemToRemove); // Знаходимо індекс товару для видалення
         if (index !== -1) {
-            this.items.splice(index, 1); // Видаляємо товар, який знайшли
+            this.#items.splice(index, 1); // Видаляємо товар, який знайшли
         }
     }
 
